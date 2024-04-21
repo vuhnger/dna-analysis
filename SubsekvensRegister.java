@@ -43,6 +43,7 @@ class SubsekvensRegister implements Register{
     static void finnMaksFrekvens(
         HashMap<String, Subsekvens> h
     ){
+        if (h == null){System.out.print("Ingen frekvenstabell å sjekke. "); return;}
         int frekvens = 0;
         String maks = "";
         for (String s : h.keySet()){
@@ -64,6 +65,7 @@ class SubsekvensRegister implements Register{
             
             while ((linje = leser.readLine()) != null){
                 if (linje.length() < 3){continue;}
+                if (linje == "amino_acid"){continue;}
                 linje = linje.strip();
                 for (int i = 0; i < linje.length() - 2; i++){
                     String subsekvens = linje.substring(i, i + 3);
@@ -87,7 +89,7 @@ class SubsekvensRegister implements Register{
     public void settInn(HashMap<String, Subsekvens> personDna){
         hashBeholder.add(personDna);
     }
-    
+
     @Override
     public HashMap<String, Subsekvens> taUt(){
         return hashBeholder.isEmpty() ? null : hashBeholder.remove(0);
