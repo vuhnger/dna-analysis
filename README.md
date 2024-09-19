@@ -1,7 +1,7 @@
 # A Java program for analysing DNA strains and covid sickness
 
 ## Description
-This program can process large volumes of DNA strains and produce the strains that most frequently occur in patients with a positive COVID-19 diagnosis.
+This program uses multithreading to process large volumes of DNA strains given as strings and cam produce the strains that most frequently occur in patients with a positive COVID-19 diagnosis.
 
 ## Installation
 
